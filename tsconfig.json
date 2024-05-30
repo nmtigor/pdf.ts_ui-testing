@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    // "baseUrl": ".",
+    "paths": {
+      "@cy/*": ["./cypress/*"],
+      "@cy-lib/*": ["./src/lib/*"],
+      "@fe-src/*": ["../pdf.ts/src/*"],
+      "@fe-cpl/*": ["../pdf.ts/src/lib/compiling/*"],
+      "@fe-edt/*": ["../pdf.ts/src/lib/editor/*"],
+      "@fe-lib/*": ["../pdf.ts/src/lib/*"],
+      "@wretch": ["../pdf.ts/src/3rd/wretch-2.7.1/dist/index.js"],
+      "@xstate": ["../pdf.ts/src/3rd/xstate-5.9.1/xstate.ts"],
+      "@zod": ["../pdf.ts/src/3rd/zod-3.22.2/lib/index.mjs"]
+    },
+    "rootDir": "..",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "types": [
+      "cypress"
+    ],
+
+    "target": "ES2022",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "skipLibCheck": true,
+
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "isolatedModules": true,
+
+    "outDir": "gen",
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "gen",
+    "sourceMap": true,
+
+    "allowJs": true,
+    "checkJs": false,
+
+    "allowTsImport": true,
+    "preprocessorFile": "../pdf.ts/src/global.ts",
+    "unaliasImportPaths": true
+  },
+
+  "files": [
+    "src/pdf/slave.cy.ts"
+  ],
+  "include": [
+    "cypress/**/*.ts",
+    "../premsys-fe/src/3rd/wretch-2.7.1/**/*",
+    "../premsys-fe/src/3rd/xstate-5.9.1/**/*"
+  ]
+}
