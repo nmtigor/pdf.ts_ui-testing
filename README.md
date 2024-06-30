@@ -23,45 +23,51 @@ this project.
 "pdf.ts" and "pdf.ts_ui-testing" MUST be in the same folder. Name "foo" is
 irrelevant.
 
-### cypress run
+### unittest
 
 - ```bash
-  cd /path_to/foo/pdf.ts_ui-testing
-  deno run --allow-read --allow-run util/test.ts --tsc "/path_to/TypeScript/bin/tsc"
+  cd /path_to/pdf.ts/src/test
+  deno task server
   ```
+- ```bash
+  cd /path_to/foo/pdf.ts_ui-testing
+  deno run --allow-read --allow-run util/unittest.ts --tsc "/path_to/TypeScript/bin/tsc"
+  ```
+
+### reftest
+
+- Extract [pdf.js-4.3.136](https://github.com/mozilla/pdf.js/tree/v4.3.136) onto
+  <ins>/path_to/pdf.js</ins>, and run `gulp makeref` there.
+- ```bash
+  ln -f -s /path_to/pdf.js/test/tmp /path_to/foo/pdf.ts/res/pdf/test/ref 
+  cd /path_to/foo/pdf.ts/src/test
+  deno task pdfref
+  ```
+- ```bash
+  cd /path_to/foo/pdf.ts_ui-testing
+  deno run --allow-read --allow-run util/build.ts --tsc "/path_to/TypeScript/bin/tsc"
+  ```
+- Visit
+  <ins>h</ins><ins>ttp://localhost:8051/src/pdf/pdf.ts-test/test_slave.html</ins>
+  in chrome or edge\
+  (DO NOT zoom page)
 
 ### cypress open
 
 - ```bash
   cd /path_to/foo/pdf.ts/src/test
-  # Start a local file server
-  deno run --allow-net --allow-read --allow-write=../baseurl.mjs test_server.ts
+  deno task server
   ```
 - ```bash
-  cd /path_to/foo/pdf.ts
-  /path_to/TypeScript/bin/tsc --preprocessorNames ~DENO,TESTING,CYPRESS
   cd /path_to/foo/pdf.ts_ui-testing
-  /path_to/TypeScript/bin/tsc --preprocessorNames ~DENO,TESTING,CYPRESS
+  deno run --allow-read --allow-run util/build.ts --tsc "/path_to/TypeScript/bin/tsc"
   npx cypress open
   ```
-
-### test_slave.html
-
-- ```bash
-  cd /path_to/foo/pdf.ts/src/test
-  # Start a local file server
-  deno run --allow-net --allow-read --allow-write=../baseurl.mjs test_server.ts
-  ```
-- ```bash
-  cd /path_to/foo/pdf.ts
-  /path_to/TypeScript/bin/tsc --preprocessorNames ~DENO,TESTING
-  ```
-- Visit
-  <ins>h</ins><ins>ttp://localhost:9071/src/pdf/test_slave.html</ins>
 
 ---
 
 ### Current States
 
 - Browser: chrome
-- Ref tests: 6 / 1037
+- unittest: 28 / 38
+- reftest: 3 / 1061

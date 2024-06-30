@@ -1,20 +1,25 @@
 /** 80**************************************************************************
- * @module pdf/slave.cy
+ * @module pdf/pdf.ts-test/slave.cy
  * @license Apache-2.0
  ******************************************************************************/
 
-export {};
+import { D_sp_test } from "@fe-src/alias.ts";
+import { MOZCENTRAL } from "@fe-src/global.ts";
 /*80--------------------------------------------------------------------------*/
 
-const D_test = "src/pdf/pdf.ts-test";
-
 it("slave", { viewportWidth: 1440, viewportHeight: 900 }, () => {
-  cy.visit(
-    "/src/pdf/test_slave.html" + [
-      "?browser=chrome",
-      `manifestFile=${encodeURIComponent(`/${D_test}/test_manifest.json`)}`,
-      `filterFile=${encodeURIComponent(`/${D_test}/test_filter.json`)}`,
-    ].join("&"),
-  );
+  /*#static*/ if (MOZCENTRAL) {
+    cy.visit(
+      `/${D_sp_test}/test_slave.html` + [
+        "?browser=firefox",
+      ].join("&"),
+    );
+  } else {
+    cy.visit(
+      `/${D_sp_test}/test_slave.html` + [
+        "?browser=chrome",
+      ].join("&"),
+    );
+  }
 });
 /*80--------------------------------------------------------------------------*/
