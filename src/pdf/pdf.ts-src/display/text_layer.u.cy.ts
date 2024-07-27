@@ -21,7 +21,7 @@
  * limitations under the License.
  */
 
-import { buildGetDocumentParams } from "@cy-pdf.ts-test/test_utils.ts";
+import { buildGetDocumentParams } from "@cy-pdf.ts-test/unittest_utils.js";
 import { getDocument } from "@fe-pdf.ts-src/display/api.ts";
 import { TextLayer } from "@fe-pdf.ts-src/display/text_layer.ts";
 /*80--------------------------------------------------------------------------*/

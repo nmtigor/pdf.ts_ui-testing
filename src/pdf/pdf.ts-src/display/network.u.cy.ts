@@ -21,7 +21,7 @@
  * limitations under the License.
  */
 
-import { TEST_PDFS_PATH } from "@cy-pdf.ts-test/test_utils.ts";
+import { TEST_PDFS_PATH } from "@cy-pdf.ts-test/unittest_utils.js";
 import type { DocumentInitP } from "@fe-pdf.ts-src/display/api.ts";
 import type { PDFNetworkStreamRangeRequestReader } from "@fe-pdf.ts-src/display/network.ts";
 import { PDFNetworkStream } from "@fe-pdf.ts-src/display/network.ts";

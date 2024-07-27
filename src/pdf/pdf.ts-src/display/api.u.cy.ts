@@ -21,13 +21,13 @@
  * limitations under the License.
  */
 
-import type { BuildGetDocumentParamsOptions } from "@cy-pdf.ts-test/test_utils.ts";
+import type { BuildGetDocumentParamsOptions } from "@cy-pdf.ts-test/unittest_utils.js";
 import {
   buildGetDocumentParams,
   getPDF,
   TEST_IMAGES_PATH,
   TEST_PDFS_PATH,
-} from "@cy-pdf.ts-test/test_utils.ts";
+} from "@cy-pdf.ts-test/unittest_utils.js";
 import type { uint } from "@fe-lib/alias.ts";
 import { fail } from "@fe-lib/util/trace.ts";
 import type { ImgData } from "@fe-pdf.ts-src/core/evaluator.ts";

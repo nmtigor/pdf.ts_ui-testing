@@ -42,7 +42,7 @@ Cypress.Commands.add(
   (subj_x, ...children_cy_x) => {
     const LEN = children_cy_x.length;
     const expect_a = subj_x[0].children;
-    expect(expect_a.length).to.equal(LEN);
+    expect(expect_a.length).eq(LEN);
     // assert(expect_a.length === LEN);
     for (let i = 0; i < LEN; ++i) {
       children_cy_x[i].then((_z) => {

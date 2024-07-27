@@ -6,15 +6,15 @@
       "@cy-lib/*": ["./src/lib/*"],
       "@cy-pdf.ts-test/*": ["./src/pdf/pdf.ts-test/*"],
       "@fe-3rd/*": ["../pdf.ts/src/3rd/*"],
-      "@fe-src/*": ["../pdf.ts/src/*"],
       "@fe-cpl/*": ["../pdf.ts/src/lib/compiling/*"],
       "@fe-edt/*": ["../pdf.ts/src/lib/editor/*"],
       "@fe-lib/*": ["../pdf.ts/src/lib/*"],
       "@fe-pdf.ts-src/*": ["../pdf.ts/src/pdf/pdf.ts-src/*"],
       "@fe-pdf.ts-test/*": ["../pdf.ts/src/pdf/pdf.ts-test/*"],
       "@fe-pdf.ts-web/*": ["../pdf.ts/src/pdf/pdf.ts-web/*"],
+      "@fe-src/*": ["../pdf.ts/src/*"],
       "@wretch": ["../pdf.ts/src/3rd/wretch-2.9.0/dist/index.js"],
-      "@xstate": ["../pdf.ts/src/3rd/xstate-5.9.1/xstate.ts"],
+      "@xstate": ["../pdf.ts/src/3rd/xstate-5.13.2/xstate.ts"],
       "@zod": ["../pdf.ts/src/3rd/zod-3.23.8/lib/index.mjs"]
     },
     "rootDir": "..",
@@ -57,6 +57,6 @@
     "cypress/**/*.ts",
     "src/**/*.cy.ts",
     "../pdf.ts/src/3rd/wretch-2.9.0/**/*",
-    "../pdf.ts/src/3rd/xstate-5.9.1/**/*"
+    "../pdf.ts/src/3rd/xstate-5.13.2/**/*"
   ]
 }

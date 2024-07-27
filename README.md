@@ -34,9 +34,20 @@ irrelevant.
   deno run --allow-read --allow-run util/unittest.ts --tsc "/path_to/TypeScript/bin/tsc"
   ```
 
+### integrationtest
+
+- ```bash
+  cd /path_to/pdf.ts/src/test
+  deno task server
+  ```
+- ```bash
+  cd /path_to/foo/pdf.ts_ui-testing
+  deno run --allow-read --allow-run util/integrationtest.ts --tsc "/path_to/TypeScript/bin/tsc"
+  ```
+
 ### reftest
 
-- Extract [pdf.js-4.3.136](https://github.com/mozilla/pdf.js/tree/v4.3.136) onto
+- Extract [pdf.js-4.4.168](https://github.com/mozilla/pdf.js/tree/v4.4.168) onto
   <ins>/path_to/pdf.js</ins>, and run `gulp makeref` there.
 - ```bash
   ln -f -s /path_to/pdf.js/test/tmp /path_to/foo/pdf.ts/res/pdf/test/ref 
@@ -70,4 +81,5 @@ irrelevant.
 
 - Browser: chrome
 - unittest: 28 / 38
-- reftest: 3 / 1061
+- integrationtest: 3 / 195
+- reftest: 3 / 1062

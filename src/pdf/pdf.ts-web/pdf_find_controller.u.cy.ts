@@ -26,7 +26,7 @@ import { EventBus, type EventMap } from "@fe-pdf.ts-web/event_utils.ts";
 import type { FindCtrlState } from "@fe-pdf.ts-web/pdf_find_controller.ts";
 import { PDFFindController } from "@fe-pdf.ts-web/pdf_find_controller.ts";
 import { SimpleLinkService } from "@fe-pdf.ts-web/pdf_link_service.ts";
-import { CMAP_URL, getPDF } from "../pdf.ts-test/test_utils.ts";
+import { CMAP_URL, getPDF } from "../pdf.ts-test/unittest_utils.ts";
 /*80--------------------------------------------------------------------------*/
 
 const tracemonkeyFileName = "tracemonkey.pdf";
