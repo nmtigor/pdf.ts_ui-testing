@@ -121,10 +121,10 @@ describe("accessibility", () => {
     });
 
     it("must check that the text fields are in the visual order", () => {
-      const results: string[] = [];
+      const results: unknown[] = [];
       cy.get(".annotationLayer .textWidgetAnnotation")
         .each((jel) => {
-          results.push(jel[0].getAttribute("data-annotation-id")!);
+          results.push(jel[0].getAttribute("data-annotation-id"));
         });
       cy.wrap(results)
         .should("eql", ["32R", "30R", "31R", "34R", "29R", "33R"]);

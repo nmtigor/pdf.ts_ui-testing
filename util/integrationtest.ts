@@ -7,7 +7,7 @@
 
 import { D_cy } from "@fe-src/alias.ts";
 import { run } from "@fe-util/util.ts";
-import { parseArgs } from "@std/cli/parse_args.ts";
+import { parseArgs } from "@std/cli";
 import { resolve } from "@std/path";
 /*80--------------------------------------------------------------------------*/
 
@@ -37,11 +37,11 @@ success &&= (() => {
     !run(
       "deno run --allow-read --allow-run " +
         `${AD_cy}/util/build.ts --tsc ${P_tsc}`,
-      53,
+      78,
     )
   ) return false;
 
-  if (!run(`npx cypress run -s **/pdf/**/*.i.cy.js -b chrome`, 214)) {
+  if (!run(`npx cypress run -s '**/pdf/**/*.i.cy.js' -b chrome`, 354)) {
     success = false;
   }
 

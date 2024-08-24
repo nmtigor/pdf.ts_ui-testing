@@ -15,4 +15,8 @@ export function queriesFrom(filename: string, zoom?: number | string) {
     `file=${`/${D_rp_pdfs}/${filename}#zoom=${zoom ?? "page-fit"}`}`,
   ].join("&");
 }
+
+export function getSelector(id: string): string {
+  return `[data-element-id="${id}"]`;
+}
 /*80--------------------------------------------------------------------------*/

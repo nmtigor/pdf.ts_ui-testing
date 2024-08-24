@@ -20,10 +20,10 @@
     "@fe-src/": "../../pdf.ts/src/",
     "@fe-util/": "../../pdf.ts/util/",
     "@pdf.ts-test/": "../../pdf.ts/src/pdf/pdf.ts-test/",
-    "@std/": "https://deno.land/std@0.220.1/",
-    "@std/fs": "jsr:@std/fs@^0.220.1",
-    "@std/http": "jsr:@std/http@^0.224.5",
-    "@std/path": "jsr:@std/path@^0.225.2",
+    "@std/cli": "jsr:@std/cli@^1.0.3",
+    "@std/fs": "jsr:@std/fs@^1.0.1",
+    "@std/http": "jsr:@std/http@^1.0.3",
+    "@std/path": "jsr:@std/path@^1.0.2",
     "@zod": "../../pdf.ts/src/3rd/zod-3.23.8/lib/index.mjs"
   }
 }

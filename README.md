@@ -47,7 +47,7 @@ irrelevant.
 
 ### reftest
 
-- Extract [pdf.js-4.4.168](https://github.com/mozilla/pdf.js/tree/v4.4.168) onto
+- Extract [pdf.js-4.5.136](https://github.com/mozilla/pdf.js/tree/v4.5.136) onto
   <ins>/path_to/pdf.js</ins>, and run `gulp makeref` there.
 - ```bash
   ln -f -s /path_to/pdf.js/test/tmp /path_to/foo/pdf.ts/res/pdf/test/ref 
@@ -80,6 +80,6 @@ irrelevant.
 ### Current States
 
 - Browser: chrome
-- unittest: 28 / 38
-- integrationtest: 3 / 195
-- reftest: 3 / 1062
+- unittest: 40 / 47 (85.1%)
+- integrationtest: 14 / 200 (7%)
+- reftest: 3 / 1070 (0.3%)

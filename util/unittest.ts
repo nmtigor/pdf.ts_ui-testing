@@ -3,14 +3,15 @@
  * @license MIT
  ******************************************************************************/
 
-import { D_cy } from "@fe-src/alias.ts";
-import { run } from "@fe-util/util.ts";
-import { parseArgs } from "@std/cli/parse_args.ts";
+import { D_cy, D_fe, D_fe_pdf, D_gp_src } from "@fe-src/alias.ts";
+import { build, run } from "@fe-util/util.ts";
+import { parseArgs } from "@std/cli";
 import { resolve } from "@std/path";
 /*80--------------------------------------------------------------------------*/
 
 const AD_pr = resolve(new URL(Deno.mainModule).pathname, "../../..");
 // console.log("🚀 ~ AD_pr:", AD_pr)
+const AD_fe = `${AD_pr}/${D_fe}`;
 const AD_cy = `${AD_pr}/${D_cy}`;
 if (AD_cy !== Deno.cwd()) {
   /* Needed by `npx cypress run` */
@@ -28,18 +29,29 @@ const P_tsc = parsedArgs["tsc"] ??
 /*64----------------------------------------------------------*/
 
 let success = true;
+const build_ = build.bind(undefined, P_tsc);
 
 success &&= (() => {
+  // await using proc = cmd(
+  //   `deno run --allow-read --allow-net ` +
+  //     `--allow-write=${AD_fe}/src/baseurl.mjs ` +
+  //     `${AD_pr}/${D_fe_test}/test_server.ts`,
+  // )
+  //   .spawn();
+  // proc.output();
+  // /* Wait for writing "baseurl.mjs" */
+  // await wait(500);
+
   let success = true;
   if (
     !run(
       "deno run --allow-read --allow-run " +
         `${AD_cy}/util/build.ts --tsc ${P_tsc}`,
-      53,
+      78,
     )
   ) return false;
 
-  if (!run(`npx cypress run -s **/pdf/**/*.u.cy.js -b chrome`, 126)) {
+  if (!run(`npx cypress run -s '**/pdf/**/*.u.cy.js' -b chrome`, 250)) {
     success = false;
   }
 
